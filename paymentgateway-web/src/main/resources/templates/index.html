@@ -1,9 +1,72 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Hello Spring MVC!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/payment.css">
+    <title>Payment Gateway Example Project - Order Page</title>
 </head>
 <body>
-    <p>Welcome to Spring MVC HelloWorld!</p>
+
+<div class="container">
+    <header></header>
+
+    <div id="order-section">
+    <h2>Order Section</h2>
+    <form>
+        <div class="form-group">
+            <label for="customername">Customer Name:</label>
+            <input type="text" class="form-control" id="customername" placeholder="Enter full-name" name="customername" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" id="price" placeholder="Enter amount" name="price" required>
+        </div>
+        <div class="form-group">
+            <label for="currency">Currency:</label>
+            <select name="currency" id="currency" class="custom-select" required>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="THB">THB</option>
+                <option value="HKD">HKD</option>
+                <option value="SGD">SGD</option>
+                <option value="AUD">AUD</option>
+            </select>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="orderSubmit">Submit</button>
+    </form>
+    </div>
+
+
+    <div id="payment-section" style="display:none">
+        <h2>Payment Section (Only Credit-Card Allowed)</h2>
+        <form>
+            <div class="form-group">
+                <label for="cardholdername">Credit card holder name:</label>
+                <input type="text" class="form-control" id="cardholdername" placeholder="Enter name as per credit card" name="cardholdername" required>
+            </div>
+            <div class="form-group">
+                <label for="cardnumber">Credit card number:</label>
+                <input type="number" class="form-control" id="cardnumber" placeholder="Enter credit card number" name="cardnumber" required>
+            </div>
+            <div class="form-group">
+                <label for="cardexpire">Credit card expiration:</label>
+                <input type="text" class="form-control" id="cardexpire" placeholder="Enter credit card expire date" name="cardexpire" required size="16">
+            </div>
+            <div class="form-group">
+                <label for="cardcvv">Credit card CCV:</label>
+                <input type="number" class="form-control" id="cardcvv" placeholder="Enter credit card cvv" name="cardcvv" required size="3">
+            </div>
+            <button type="button" class="btn btn-primary" id="paymentSubmit">Submit</button>
+        </form>
+    </div>
+
+</div>
+
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="/js/payment.js"></script>
 </html>
