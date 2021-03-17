@@ -12,8 +12,4 @@ public class WelcomeController {
         return "index";
     }
 
-    @RequestMapping("/test")
-    public String testhelloApp(Model model) {
-        return "testfile";
-    }
 }
