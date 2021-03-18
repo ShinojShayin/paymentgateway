@@ -46,12 +46,10 @@ public class PaymentRuleFactory {
 
     }
 
-    Predicate<CreditCardVo> isAmex = cc-> {
+    public Predicate<CreditCardVo> isAmex = cc-> {
         String cardno = cc.getCardnumber();
-
-        if(cardno.length()==15 && cardno.startsWith("3"))
+        if(cardno.length()==15 && cardno.trim().startsWith("3"))
             return true;
-
         return false;
     };
 

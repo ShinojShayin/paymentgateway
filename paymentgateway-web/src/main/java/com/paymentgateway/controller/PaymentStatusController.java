@@ -24,7 +24,7 @@ public class PaymentStatusController {
     }
 
     @GetMapping(value = "/payment/paypal/success")
-    public String paypalSuccessPay(@RequestParam("paymentId") String paymentId, @RequestParam("payerId") String payerId) {
+    public String paypalSuccessPay(@RequestParam("paymentId") String paymentId, @RequestParam("PayerID") String payerId) {
         try {
             Payment payment = paypalPaymentService.executePayment(paymentId, payerId);
 
@@ -37,7 +37,7 @@ public class PaymentStatusController {
         } catch (PayPalRESTException e) {
             System.out.println(e.getMessage());
         }
-        return "redirect:/";
+        return "redirect:/payment/failed";
     }
 
     @GetMapping(value = "/payment/success")
