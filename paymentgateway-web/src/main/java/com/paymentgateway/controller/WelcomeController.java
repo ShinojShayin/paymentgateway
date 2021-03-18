@@ -9,6 +9,13 @@ public class WelcomeController {
 
     @RequestMapping("/")
     public String helloApp() {
+
+        return "index";
+    }
+
+    @RequestMapping("/home")
+    public String helloApp1() {
+        System.out.print("got it");
         return "index";
     }
 

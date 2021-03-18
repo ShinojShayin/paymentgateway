@@ -1,6 +1,7 @@
 package com.paymentgateway.dao;
 
 import com.paymentgateway.entity.OrderEntity;
+import com.paymentgateway.entity.PaymentStatusEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -12,9 +13,9 @@ public class PaymentDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public OrderEntity createUser(OrderEntity orderEntity) {
-        entityManager.persist(orderEntity);
-        return orderEntity;
+    public PaymentStatusEntity insertPaymentStatus(PaymentStatusEntity paymentStatusEntity) {
+        entityManager.persist(paymentStatusEntity);
+        return paymentStatusEntity;
     }
 
 }

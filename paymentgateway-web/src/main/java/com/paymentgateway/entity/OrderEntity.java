@@ -13,10 +13,17 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "customername")
     @NotNull
-    @Size(max = 30)
-    private String name;
+    private String customername;
+
+    @Column(name = "price")
+    @NotNull
+    private String price;
+
+    @Column(name = "currency")
+    @NotNull
+    private String currency;
 
     public int getId() {
         return id;
@@ -26,11 +33,27 @@ public class OrderEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCustomername() {
+        return customername;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomername(String customername) {
+        this.customername = customername;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 }

@@ -12,7 +12,7 @@ public class OrderDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public OrderEntity createOrder(OrderEntity orderEntity) {
+    public OrderEntity insertOrder(OrderEntity orderEntity) {
         entityManager.persist(orderEntity);
         return orderEntity;
     }
